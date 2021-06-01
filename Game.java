@@ -6,7 +6,6 @@ A number-guessing game.
 
 import java.util.Scanner;
 import java.util.Random;
-import java.util.InputMismatchException;
 
 public class Game {
   public static void main(String[] args){
@@ -25,7 +24,7 @@ public class Game {
     int number = rand.nextInt(100);
     int guesses = 0;
 
-    System.out.println("Here is the number: " + number);
+    // System.out.println("Here is the number: " + number);   //include for testing only.
 
     System.out.println("Can you guess the number? Type your guess.");
 
