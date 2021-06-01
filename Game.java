@@ -6,6 +6,7 @@ A number-guessing game.
 
 import java.util.Scanner;
 import java.util.Random;
+import java.util.InputMismatchException;
 
 public class Game {
   public static void main(String[] args){
@@ -31,8 +32,16 @@ public class Game {
 
     while (true) {
       int guess;
-      guess = input.nextInt();
+
       guesses = guesses + 1;
+
+      try {
+          guess = input.nextInt();
+      } catch(Exception e) {
+          String bad_input = input.next();   // need to progress past bad input
+          System.out.println("Do you not know what a number is? You definitely need to try again");
+          continue;
+      }  
 
       if (guess < 1 || guess > 100) {
         System.out.println(guess + " is not between 1 and 100. DUH!!! Please try again.");
