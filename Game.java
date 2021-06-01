@@ -28,22 +28,16 @@ public class Game {
 
     System.out.println("Can you guess the number? Type your guess.");
 
+
     while (true) {
       int guess;
-      try {
-        guess = input.nextInt();
-      } catch(InputMismatchException e) {
-        String bad_input = input.next();
-        System.out.println("Please type a number.");
-        continue;
-      }
+      guess = input.nextInt();
+      guesses = guesses + 1;
 
       if (guess < 1 || guess > 100) {
-        System.out.println(guess + " is not between 1 and 100. Please try again.");
+        System.out.println(guess + " is not between 1 and 100. DUH!!! Please try again.");
         continue;
       }
-
-      guesses = guesses + 1;
 
       if (guess < number) {
         System.out.println("Too low. Try higher?");
@@ -58,8 +52,28 @@ public class Game {
         break;
       }
     }
+
   }
 }
-}
 
-}
+// continue skips all the code below and re-enters the while loop
+// break exits the while loop
+
+
+// int guess = 0;
+//     int guesses = 0;
+
+//     while (guess != number){
+//       guess = input.nextInt();
+//       guesses +=1;
+
+//       if (guess > number) {
+//       System.out.println("Your guess was too high, try again.");
+//     } else if (guess < number) {
+//       System.out.println("Your guess was too low, try again.");
+//     } else {
+//       System.out.println("You guessed correct, " + name + "! It only took " + guesses + " number of guesses.");
+//     }
+//     }
+//   }
+// }
